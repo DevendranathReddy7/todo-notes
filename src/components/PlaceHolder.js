@@ -32,7 +32,7 @@ const PlaceHolder = (props) => {
             {props.notesList && <ul className='list'>
                 <div className='noteDiv'>
                     {props.notesList.map((note) => <li key={Math.random()}>
-                        <h4 className='notes'>{readMore ? note.slice(0, 50) : note}
+                        <h4 className='notes'>{readMore ? note.slice(0, 138) : note}
                             <span onClick={toggleReadMore} className="read-or-hide">
                                 {readMore ? "...read more" : " show less"}
                             </span></h4>
