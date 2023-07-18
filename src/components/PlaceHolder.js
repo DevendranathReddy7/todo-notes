@@ -17,6 +17,9 @@ const PlaceHolder = (props) => {
     const deleteItemHandle = (id) => {
         props.onDelete(id)
     }
+    const editHandle = (id) => {
+        props.onEdit(id)
+    }
     const toggleReadMore = () => {
         setReadMore(!readMore);
     }
@@ -43,11 +46,11 @@ const PlaceHolder = (props) => {
             {props.todoList && <ul className='list'>
                 {props.todoList.map((todo) => <li key={Math.random()}>
                     <div className='todoCard'>
-                        <input type="checkbox" className='checkbox' onChange={checkBoxHandler} />
-                        <h4 className='todos'>{todo.todo}</h4>
+                        <input type="checkbox" className='checkbox' />
+                        <h4 className='todos' >{todo.todo}</h4>
                         <button >{isChecked ? "Done" : "ToDo"}</button>
                         <img src={kebab} alt="icon" onClick={iconClickHandler} ></img>
-                        {iconClicked ? <CardContainer todoItem={todo} onDelete={deleteItemHandle} /> : ''}
+                        {iconClicked ? <CardContainer todoItem={todo} onDelete={deleteItemHandle} onEdit={editHandle} /> : ''}
 
                     </div>
                 </li>)}
