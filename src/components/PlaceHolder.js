@@ -43,7 +43,7 @@ const PlaceHolder = (props) => {
             {props.todoList && <ul className='list'>
                 {props.todoList.map((todo) => <li key={Math.random()}>
                     <div className='todoCard'>
-                        <input type="checkbox" className='checkbox' />
+                        <input type="checkbox" className='checkbox' onChange={checkBoxHandler} />
                         <h4 className='todos'>{todo.todo}</h4>
                         <button >{isChecked ? "Done" : "ToDo"}</button>
                         <img src={kebab} alt="icon" onClick={iconClickHandler} ></img>
