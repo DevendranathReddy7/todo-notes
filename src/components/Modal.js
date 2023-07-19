@@ -40,17 +40,18 @@ const Modal = (props) => {
                     <div onClick={toggleModal} className="overlay"></div>
                     <div className="modal-content">
                         <form onSubmit={submitHandler}>
-                            <input onChange={modifyHandler}></input>
+                            {/* <input onChange={modifyHandler}></input> */}
+                            <textarea onChange={modifyHandler} className="textarea">{props.todo[0].todo}</textarea>
                             <button className="close-modal" onClick={toggleModal}>
                                 Close
                             </button>
-                            <button onClick={updateHandler}>
+                            <button className='btnupdate' onClick={updateHandler}>
                                 Update
                             </button>
 
                         </form>
                     </div>
-                </div>
+                </div >
             )}
         </>
     );
