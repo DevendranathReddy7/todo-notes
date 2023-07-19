@@ -12,7 +12,6 @@ const PlaceHolder = (props) => {
         setIsChecked(e.target.checked)
 
     }
-
     const iconClickHandler = (id) => {
         const iconClickedFor = props.todoList.find(eachTodo => {
             return eachTodo.id === id
@@ -38,7 +37,7 @@ const PlaceHolder = (props) => {
                     {props.notesList.map((note) => <li key={Math.random()}>
                         <h4 className='notes'>{readMore ? note.slice(0, 138) : note}
                             <span onClick={toggleReadMore} className="read-or-hide">
-                                {readMore ? "...read more" : " show less"}
+                                {note.length > 138 ? readMore ? "...read more" : " show less" : ''}
                             </span></h4>
                     </li>)}
                 </div>
