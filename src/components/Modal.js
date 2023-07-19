@@ -5,13 +5,14 @@ import "./Modal.css";
 const Modal = (props) => {
     const [newContent, setNewContent] = useState()
     const [modal, setModal] = useState(props.isEdit);
-    const [id, setId] = useState(props.todo.id)
+    const [id, setId] = useState(props.todo[0].id)
     const toggleModal = () => {
         setModal((prev) => { return !prev });
         props.onToggle(!modal)
 
     };
     const modifyHandler = (e) => {
+
         setNewContent(e.target.value)
 
 
@@ -19,6 +20,11 @@ const Modal = (props) => {
     const submitHandler = (e) => {
         e.preventDefault()
         props.newC({ id, newContent })
+    }
+    const updateHandler = (e) => {
+        e.preventDefault()
+        props.newContent({ id, newContent })
+
     }
 
     if (modal) {
@@ -34,11 +40,14 @@ const Modal = (props) => {
                     <div onClick={toggleModal} className="overlay"></div>
                     <div className="modal-content">
                         <form onSubmit={submitHandler}>
-                            <textarea onChange={modifyHandler}>{props.todo[0].todo}</textarea>
+                            <input onChange={modifyHandler}></input>
                             <button className="close-modal" onClick={toggleModal}>
                                 Close
                             </button>
-                            <button>Update</button>
+                            <button onClick={updateHandler}>
+                                Update
+                            </button>
+
                         </form>
                     </div>
                 </div>

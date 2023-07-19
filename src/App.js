@@ -10,6 +10,7 @@ function App() {
   const [showContent, setShowContent] = useState()
   const [isEdit, setIsEdit] = useState(false)
   const [editableTodo, setEditableTodo] = useState([])
+  const [newEditableTodo, setNewEditableTodo] = useState([])
   const newTodo = (todo) => {
     setTodo((prev) => [...prev, { id: Math.random().toString(36), todo: todo }])
   }
@@ -44,12 +45,27 @@ function App() {
   }
 
   const modifiedContent = (newC) => {
-    const newTodo = todo.filter(eachTodo => {
-      if (eachTodo.id === newC.id) {
-        // setTodo(...todo, [{ id, todo: newC.todo }])
-        setTodo((prev) => [...prev, { id: newC.id, todo: newC.todo }])
+
+    const newTodo = todo.find(eachTodo => eachTodo.id === newC.id)
+
+    //console.log(newTodo)
+
+    setNewEditableTodo(newTodo)
+  }
+  const content = (ntodo) => {
+
+    const updatedTodo = todo.map(eachTodo => {
+      if (eachTodo.id === ntodo.id) {
+        return {
+          id: ntodo.id,
+          todo: ntodo.newContent
+        }
+      } else {
+        return eachTodo
       }
+
     })
+    setTodo(updatedTodo)
   }
   return (
     <div className='app'>
@@ -57,7 +73,7 @@ function App() {
       {(showContent) && <PlaceHolder notesList={note} />}
       <ToDo onTodo={newTodo} />
       <PlaceHolder todoList={todo} onDelete={deleteHandle} onEdit={editHandle} />
-      {isEdit && <EditToDo editTodo={editableTodo} onToggle={toggleModal} onModify={modifiedContent} />}
+      {isEdit && <EditToDo editTodo={editableTodo} onToggle={toggleModal} onModify={modifiedContent} newTodo={newEditableTodo} newContent={content} />}
     </div>
   )
 }
