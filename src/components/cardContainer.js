@@ -7,8 +7,6 @@ const CardContainer = (props) => {
     const editHandle = (id) => {
         props.onEdit(id)
     }
-    console.log(props)
-    console.log(props.clickedItem)
     return (
         <>
 
