@@ -63,7 +63,6 @@ function App() {
       } else {
         return eachTodo
       }
-
     })
     setTodo(updatedTodo)
   }

@@ -24,6 +24,7 @@ const Modal = (props) => {
     const updateHandler = (e) => {
         e.preventDefault()
         props.newContent({ id, newContent })
+        setModal((prev) => { return !prev });
 
     }
 
@@ -43,7 +44,7 @@ const Modal = (props) => {
                             {/* <input onChange={modifyHandler}></input> */}
                             <textarea onChange={modifyHandler} className="textarea">{props.todo[0].todo}</textarea>
                             <button className="close-modal" onClick={toggleModal}>
-                                Close
+                                X
                             </button>
                             <button className='btnupdate' onClick={updateHandler}>
                                 Update
