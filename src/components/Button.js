@@ -9,8 +9,6 @@ const Button = (props) => {
         setShowContent_notes(prev => { return !prev })
         props.onSelect(showContent_notes)
     }
-    console.log(11111111111, showContent_notes)
-    console.log(2222222222222222, props.contentShow)
     const showPlaceHolderHandler = () => {
         setShowPlaceHolder((prevState) => { return (!prevState) })
         props.onClick(showPlaceHolder)
