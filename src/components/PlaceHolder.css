@@ -1,0 +1,21 @@
+/* .todo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+} */
+
+.todo-wrapper2 {
+    display: inline-flex;
+    align-items: flex-start;
+}
+
+.checkbox {
+    width: 15px;
+    height: 15px;
+}
+
+.todos {
+    max-width: 100rem;
+    display: inline;
+    margin-left: 13px;
+}
