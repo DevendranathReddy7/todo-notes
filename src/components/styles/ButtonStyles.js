@@ -43,11 +43,12 @@ margin-top:3px
 `
 
 export const StyledContainer = styled.div`
+background-color: ${props => (props.err ? 'rgb(244, 112, 112)' : '')};
 display:flex;
 justify-content:space-between;
-margin:20px 100px 20px 60px;
+margin: ${props => (props.err ? '0px 100px 10px 60px;' : '20px 100px 20px 60px')};
 border-style:solid;
-padding:15px;
+padding:${props => (props.err ? '2px 15px' : '15px')};
 border-radius:5px;
 `
 

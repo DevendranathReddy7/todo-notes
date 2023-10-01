@@ -9,7 +9,7 @@ const Navbar = (props) => {
                 {props.title === "ToDo" ? <NavLink to='/notes'><StyledButton navbar>Notes</StyledButton></NavLink> :
                     <NavLink to='/todo'><StyledButton navbar>ToDo</StyledButton></NavLink>
                 }
-                <NavLink to='/'><StyledButton navbar>&larr; Back</StyledButton></NavLink>
+                <NavLink to='/'><StyledButton navbar>&#8962; Back</StyledButton></NavLink>
             </div>
         </StyledNav>
     )

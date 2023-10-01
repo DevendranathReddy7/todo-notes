@@ -17,14 +17,14 @@ const EditDelete = (props) => {
         todos.filter(todo => todo.id === id ? setSelecteItem(todo) : '')
     }
     return (
-
-        < div >
-            <StyledEditDelete onClick={() => editHandler(props.id)}>Edit</StyledEditDelete>
-            <StyledEditDelete onClick={() => deleteHandle(props.id)}>Delete</StyledEditDelete>
+        <>
+            < div >
+                <StyledEditDelete onClick={() => editHandler(props.id)}>Edit</StyledEditDelete>
+                <StyledEditDelete onClick={() => deleteHandle(props.id)}>Delete</StyledEditDelete>
+            </div >
             {isEditing && <EditModal clickedItem={selectedItem} />}
-        </div >
 
-
+        </>
     )
 }
 export default EditDelete
