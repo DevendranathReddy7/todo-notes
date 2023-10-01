@@ -18,7 +18,7 @@ const EditDelete = (props) => {
     }
     return (
         <>
-            < div >
+            <div style={{ borderStyle: "solid", borderRadius: '7px' }} >
                 <StyledEditDelete onClick={() => editHandler(props.id)}>Edit</StyledEditDelete>
                 <StyledEditDelete onClick={() => deleteHandle(props.id)}>Delete</StyledEditDelete>
             </div >

@@ -9,7 +9,7 @@ const Error = (props) => {
             <StyledContainer err>
                 <div className="wrapper">
                     <div className="error_wrapper1">
-                        <span className="tootip">&#x1F6C8;</span>
+                        <span className="tootip span">&#x1F6C8;</span>
                         <p className="hide">Please action on the error to add a new Todo</p>
                         <h4 className="err">{props.err}</h4>
                     </div>

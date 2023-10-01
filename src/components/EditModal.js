@@ -13,10 +13,10 @@ const EditModal = (props) => {
     const changeHandler = (e) => {
         setNewTodo(e.target.value)
     }
-
+    console.log(newTodo)
     const submitHandler = (e) => {
         e.preventDefault()
-        todos.filter(todo => todo.id === props.clickedItem.id ? dispatch(editTodo(newTodo, todo.id)) : '')
+        todos.filter(todo => todo.id === props.clickedItem.id ? newTodo !== undefined && dispatch(editTodo(newTodo, todo.id)) : '')
         setIsOpen((prev) => !prev)
     }
     if (isOpen) {
