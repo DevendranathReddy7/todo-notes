@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.button`
-background-color: ${(props) => (props.navbar ? 'black' : props.edit ? 'transparent' : '#007bff')};
+background-color: ${(props) => (props.navbar ? 'black' : '#007bff')};
 color:white;
 border:none;
 border-radius:5px;
@@ -44,6 +44,28 @@ margin-top:3px
 
 export const StyledContainer = styled.div`
 display:flex;
+justify-content:space-between;
+margin:20px 100px 20px 60px;
+border-style:solid;
+padding:15px;
+border-radius:5px;
+`
+
+export const StyledEditDelete = styled.button`
+background-color: black;
+color:white;
+border:none;
+border-radius:4px;
+margin:5px;
+padding:5px;
+cursor: pointer;
+&:hover{
+    background-color:#0056b3
+}
+`
+
+export const StyledModalContainer = styled.div`
+display:inline-flex;
 justify-content:space-between;
 margin:20px 100px 20px 60px;
 border-style:solid;

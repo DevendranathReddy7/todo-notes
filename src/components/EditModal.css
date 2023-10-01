@@ -1,0 +1,44 @@
+.modal,
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.overlay {
+    background: rgba(49, 49, 49, 0.8);
+}
+
+.modal-content {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    line-height: 1.4;
+    padding: 14px 100px 14px 14px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+    background-color: bisque;
+
+}
+
+.cross {
+    position: absolute;
+    bottom: 38px;
+    left: 24.5rem;
+
+}
+
+.todo_update {
+    margin-left: 35px;
+    top: 70px;
+    position: absolute;
+}
+
+.todo_text {
+    height: 70px;
+    width: 300px;
+}
