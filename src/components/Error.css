@@ -4,16 +4,23 @@
     align-items: center;
 }
 
-.error_cancel {
-    margin-right: 20px;
-    background-color: red;
-    border-radius: 20px;
-    border: none;
+
+
+span {
+    font-size: 30px;
+
 }
 
 .btn {
-    height: 24px;
-    width: 24px;
+    height: 30px;
+    width: 30px;
+    color: red;
+    font-weight: bold;
+}
+
+.tootip {
+    height: 45px;
+    width: 30px;
 }
 
 .close_btn {
@@ -28,4 +35,18 @@
     justify-content: space-between;
     align-items: center;
 
+}
+
+
+.hide {
+    display: none;
+}
+
+.tootip:hover+.hide {
+    display: block;
+    color: rgb(17, 0, 255);
+}
+
+.tootip:hover+.err {
+    display: none;
 }

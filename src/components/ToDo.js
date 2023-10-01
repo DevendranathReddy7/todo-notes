@@ -13,7 +13,7 @@ const ToDo = () => {
     const addToDoHandler = (e) => {
         setTodo(e.target.value)
     }
-    const todoExisted = todos.some(eachTodo => eachTodo.todo === todo)
+    const todoExisted = Array.isArray(todos) && todos.some(eachTodo => eachTodo.todo === todo)
     const submitHandler = (e) => {
         e.preventDefault()
         if (todo === '') {

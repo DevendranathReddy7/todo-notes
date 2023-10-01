@@ -9,8 +9,9 @@ const Error = (props) => {
             <StyledContainer err>
                 <div className="wrapper">
                     <div className="error_wrapper1">
-                        <button className="error_cancel btn">X</button>
-                        <h4>{props.err}</h4>
+                        <span className="tootip">&#x1F6C8;</span>
+                        <p className="hide">Please action on the error to add a new Todo</p>
+                        <h4 className="err">{props.err}</h4>
                     </div>
                     <div><button className="btn close_btn" onClick={closeHandler}>X</button ></div>
                 </div>

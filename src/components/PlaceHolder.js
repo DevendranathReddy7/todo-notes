@@ -21,7 +21,7 @@ const PlaceHolder = () => {
     console.log(todos)
     return (
         <>
-            {todos.map(todo => todo.error === true ? <Error err={todo.todo} onClose={closeHandler} /> :
+            {Array.isArray(todos) && todos.map(todo => todo.error === true ? <Error err={todo.todo} onClose={closeHandler} /> :
                 <StyledLi key={todo.id}>
                     <StyledContainer>
                         <div className="todo-wrapper">
