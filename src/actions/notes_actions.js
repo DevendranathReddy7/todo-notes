@@ -16,3 +16,14 @@ export const toggleReadMore = (id) => {
         type: "TOGGLE_READ_MORE", payload: { id: id }
     }
 }
+export const errorNotes = () => {
+    return {
+        type: "ERROR_NOTES", payload: { title: 'Notes can\'t be empty!' }
+    }
+}
+
+export const cancelError = () => {
+    return {
+        type: "CANCEL_ERROR"
+    }
+}

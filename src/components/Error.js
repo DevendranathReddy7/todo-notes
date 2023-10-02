@@ -10,7 +10,7 @@ const Error = (props) => {
                 <div className="wrapper">
                     <div className="error_wrapper1">
                         <span className="tootip span">&#x1F6C8;</span>
-                        <p className="hide">Please action on the error to add a new Todo</p>
+                        <p className="hide">Please action on the error to add a new Item</p>
                         <h4 className="err">{props.err}</h4>
                     </div>
                     <div><button className="btn close_btn" onClick={closeHandler}>X</button ></div>

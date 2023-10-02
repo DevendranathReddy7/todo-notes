@@ -3,7 +3,7 @@ import Input from "./Input"
 import Navbar from "./Navbar"
 import NotesPlaceHolder from "./NotesPlaceHolder"
 import { useDispatch } from "react-redux"
-import { addNotes } from "../actions/notes_actions"
+import { addNotes, errorNotes } from "../actions/notes_actions"
 
 const Notes = () => {
     const [notes, setNotes] = useState('')
@@ -14,7 +14,12 @@ const Notes = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(addNotes(notes))
+        if (notes === '') {
+            dispatch(errorNotes())
+        } else {
+            dispatch(addNotes(notes))
+        }
+
 
     }
     return (
