@@ -1,3 +1,6 @@
+#About this Project/Application:
+This is a Todo & Notes application where i had developed with routing and Redux
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
