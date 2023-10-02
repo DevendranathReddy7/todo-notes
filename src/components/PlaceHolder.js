@@ -7,6 +7,7 @@ import './PlaceHolder.css'
 import { useState } from "react"
 import EditDelete from "./EditDelete"
 import Error from "./Error"
+import ProgressBar from "./ProgressBar"
 const PlaceHolder = () => {
     const todos = useSelector(store => store.todoReducer)
     const [kebabClicked, setKebabClicked] = useState({ clicked: false, id: 0 })
@@ -21,6 +22,7 @@ const PlaceHolder = () => {
     console.log(todos)
     return (
         <>
+            {Array.isArray(todos) && todos.length > 0 ? <ProgressBar /> : ''}
             {Array.isArray(todos) && todos.map(todo => todo.error === true ? <Error err={todo.todo} onClose={closeHandler} /> :
                 <StyledLi key={todo.id}>
                     <StyledContainer>
@@ -36,6 +38,7 @@ const PlaceHolder = () => {
                         </div>
                     </StyledContainer>
                 </StyledLi>)}
+
         </>
     )
 }
