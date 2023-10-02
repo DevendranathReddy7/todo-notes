@@ -11,6 +11,7 @@ const EditDelete = (props) => {
     const dispatch = useDispatch()
     const todos = useSelector(st => st.todoReducer)
     const deleteHandle = (id) => {
+        alert('Are you sure?')
         todos.filter(todo => todo.id === id ? dispatch(deleteTodo(todo.id)) : '')
     }
     const editHandler = (id) => {
