@@ -35,3 +35,11 @@ export const cancelError = () => {
         type: "CANCEL_ERROR", payload: { error: false }
     }
 }
+
+export const kenbanHandle = (id) => {
+    return {
+        type: 'KENBAN_HANDLE', payload: {
+            id: id
+        }
+    }
+}

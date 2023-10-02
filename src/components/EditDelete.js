@@ -17,7 +17,7 @@ const EditDelete = (props) => {
         todos.filter(todo => todo.id === id ? setSelecteItem(todo) : '')
     }
     const updateHandler = () => {
-        props.onUpdate(false)
+        props.onUpdate(props.id)
     }
     return (
         <>
