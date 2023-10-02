@@ -20,7 +20,7 @@ const NotesPlaceHolder = () => {
                 <StyledContainer>
                     <div>
                         <h3 className="notes">{greaterthan100.show ? note.notes.slice(0, 100) : note.notes}</h3>
-                        <h4 onClick={() => setGreaterthan100({ show: !greaterthan100.show, id: note.id })} className="read-hide">{note.notes.length > 100 ? greaterthan100.show ? "...Read More" : "...Read Less" : ''}</h4>
+                        <h4 onClick={() => setGreaterthan100({ show: !greaterthan100.show, id: note.id })} className="read-hide">{note.notes.length > 100 ? greaterthan100.show ? " ...Read More" : " ...Read Less" : ''}</h4>
                     </div>
                     <div>
                         <button className="btn close_btn" onClick={() => deleteHandle(note.id)}>X</button>
