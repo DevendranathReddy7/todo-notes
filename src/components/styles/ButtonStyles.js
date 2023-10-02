@@ -53,7 +53,8 @@ border-radius:5px;
 `
 
 export const StyledEditDelete = styled.button`
-background-color: black;
+height:20px;
+background-color:transparent;
 color:white;
 border:none;
 border-radius:4px;
@@ -61,7 +62,8 @@ margin:5px;
 padding:5px;
 cursor: pointer;
 &:hover{
-    background-color:#0056b3
+    background-color:#0056b3;
+    height:30px;
 }
 `
 
