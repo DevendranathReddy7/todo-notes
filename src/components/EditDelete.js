@@ -16,13 +16,16 @@ const EditDelete = (props) => {
         setIsEditing((prev) => !prev)
         todos.filter(todo => todo.id === id ? setSelecteItem(todo) : '')
     }
+    const updateHandler = () => {
+        props.onUpdate(false)
+    }
     return (
         <>
             <div style={{ borderStyle: "solid", borderRadius: '7px' }} >
                 <StyledEditDelete onClick={() => editHandler(props.id)}>Edit</StyledEditDelete>
                 <StyledEditDelete onClick={() => deleteHandle(props.id)}>Delete</StyledEditDelete>
             </div >
-            {isEditing && <EditModal clickedItem={selectedItem} />}
+            {isEditing && <EditModal clickedItem={selectedItem} onUpdate={updateHandler} />}
 
         </>
     )

@@ -34,7 +34,7 @@ const PlaceHolder = () => {
                         <div className="todo-wrapper2">
                             <StyledToDoStatus done={todo.completed}>{todo.completed === true ? "Done" : "ToDo"}</StyledToDoStatus>
                             <img src={kebab} alt="keba" onClick={() => setKebabClicked({ clicked: !kebabClicked.clicked, id: todo.id })}></img>
-                            {kebabClicked.clicked && kebabClicked.id === todo.id ? <EditDelete id={todo.id} /> : ''}
+                            {kebabClicked.clicked && kebabClicked.id === todo.id ? <EditDelete id={todo.id} onUpdate={() => setKebabClicked({ ...kebabClicked, clicked: false })} /> : ''}
                         </div>
                     </StyledContainer>
                 </StyledLi>)}

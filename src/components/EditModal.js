@@ -18,6 +18,7 @@ const EditModal = (props) => {
         e.preventDefault()
         todos.filter(todo => todo.id === props.clickedItem.id ? newTodo !== undefined && dispatch(editTodo(newTodo, todo.id)) : '')
         setIsOpen((prev) => !prev)
+        props.onUpdate(false)
     }
     if (isOpen) {
         document.body.classList.add('active-modal')
