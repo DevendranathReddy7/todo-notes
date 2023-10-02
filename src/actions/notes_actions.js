@@ -10,3 +10,9 @@ export const deleteNotes = (id) => {
         type: 'DELETE_NOTES', payload: { id: id }
     }
 }
+
+export const toggleReadMore = (id) => {
+    return {
+        type: "TOGGLE_READ_MORE", payload: { id: id }
+    }
+}
