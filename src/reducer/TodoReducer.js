@@ -24,7 +24,7 @@ const todoReducer = (state = intialState, action) => {
         case "EDIT_TODO":
             return state.map(todo => todo.id === action.payload.id ? { ...todo, todo: action.payload.title } : todo)
         case "KENBAN_HANDLE":
-            return state.map(todo => todo.id === action.payload.id ? { ...todo, kenbanOpen: !todo.kenbanOpen } : todo)
+            return state.map(todo => todo.id === action.payload.id ? { ...todo, kenbanOpen: !todo.kenbanOpen } : { ...todo, kenbanOpen: false })
         case "ERROR_TODO":
             const errorPresnet = Array.isArray(state) && state.some(todo => todo.id === 0)
             if (errorPresnet) {
