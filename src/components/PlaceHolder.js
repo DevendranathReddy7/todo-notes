@@ -4,13 +4,11 @@ import { StyledToDoStatus } from "./styles/ButtonStyles"
 import kebab from '../assests/kebab.png'
 import { cancelError, kenbanHandle, updateTodo } from "../actions/actions"
 import './PlaceHolder.css'
-import { useState } from "react"
 import EditDelete from "./EditDelete"
 import Error from "./Error"
 import ProgressBar from "./ProgressBar"
 const PlaceHolder = () => {
     const todos = useSelector(store => store.todoReducer)
-    const [kebabClicked, setKebabClicked] = useState({ clicked: false, id: 0 })
     const dispatch = useDispatch()
     const changeHandler = (id) => {
         dispatch(updateTodo(id))
@@ -22,7 +20,6 @@ const PlaceHolder = () => {
     const closeHandler = () => {
         dispatch(cancelError())
     }
-    console.log(todos)
     return (
         <>
             {Array.isArray(todos) && todos.length > 0 ? <ProgressBar /> : ''}
