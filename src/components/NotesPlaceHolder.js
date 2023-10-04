@@ -2,10 +2,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { StyledContainer, StyledLi } from "./styles/ButtonStyles"
 import './NotesPlaceHolder.css'
 import { toggleReadMore, deleteNotes, cancelError } from "../actions/notes_actions"
-import { useState } from "react"
 import Error from "./Error"
 const NotesPlaceHolder = () => {
-    const [greaterthan100, setGreaterthan100] = useState({ show: true, id: 0 })
     const notes = useSelector(store => store.NotesReducer)
     const dispatch = useDispatch()
 

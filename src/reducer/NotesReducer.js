@@ -11,7 +11,8 @@ const NotesReducer = (state = intialState, action) => {
                     ...state, {
                         id: ++id,
                         notes: action.payload.title,
-                        ReadMore: true, error: false
+                        ReadMore: true, error: false,
+                        date: new Date().toLocaleDateString()
                     }
                 ]
             }
