@@ -3,19 +3,20 @@ const intialState = []
 const todoReducer = (state = intialState, action) => {
     switch (action.type) {
         case "ADD_TODO":
-            const errorPresent = Array.isArray(state) && state.some(todo => todo.id === 0)
-            if (errorPresent) {
-                return state
-            } else {
-                return [...state, {
-                    id: ++id,
-                    todo: action.payload.title,
-                    completed: false,
-                    error: false,
-                    kenbanOpen: false
+            // const errorPresent = Array.isArray(state) && state.some(todo => todo.id === 0)
+            // if (errorPresent) {
+            //     return state
+            // } else {
+            const withoutError = Array.isArray(state) && state.filter(todo => todo.id !== 0)
+            return [...withoutError, {
+                id: ++id,
+                todo: action.payload.title,
+                completed: false,
+                error: false,
+                kenbanOpen: false
 
-                }]
-            }
+            }]
+        //}
 
         case 'UPDATE_TODO':
             return state.map(todo => todo.id === action.payload.id ? { ...todo, completed: !todo.completed } : todo)

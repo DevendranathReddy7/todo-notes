@@ -3,19 +3,20 @@ const intialState = []
 const NotesReducer = (state = intialState, action) => {
     switch (action.type) {
         case 'ADD_NOTES':
-            const errorPresent = Array.isArray(state) && state.some(note => note.id === 0)
-            if (errorPresent) {
-                return state
-            } else {
-                return [
-                    ...state, {
-                        id: ++id,
-                        notes: action.payload.title,
-                        ReadMore: true, error: false,
-                        date: new Date().toLocaleDateString()
-                    }
-                ]
-            }
+            // const errorPresent = Array.isArray(state) && state.some(note => note.id === 0)
+            // if (errorPresent) {
+            //     return state
+            // } else {
+            const withoutError = Array.isArray(state) && state.filter(note => note.id !== 0)
+            return [
+                ...withoutError, {
+                    id: ++id,
+                    notes: action.payload.title,
+                    ReadMore: true, error: false,
+                    date: new Date().toLocaleDateString()
+                }
+            ]
+        //}
         case 'DELETE_NOTES':
             return state.filter(note => note.id !== action.payload.id)
         case 'TOGGLE_READ_MORE':
